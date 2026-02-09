@@ -27,7 +27,6 @@ output "Instance" {
 		"name" : google_compute_instance.Instance.name
 		"network_ip" : google_compute_instance.Instance.network_interface.0.network_ip
 		"project" : google_compute_instance.Instance.project
-		"serial-port-enable" : google_compute_instance.Instance.metadata.serial-port-enable
 		"zone" : google_compute_instance.Instance.zone
 	}
 }
