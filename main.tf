@@ -36,3 +36,10 @@ resource "google_compute_address" "Eth0PublicIpAddress" {
 	network_tier = "PREMIUM"
 	address_type = "EXTERNAL"
 }
+
+resource "time_sleep" "SleepDelay" {
+	create_duration = local.SleepDelay
+	depends_on = [
+		google_compute_instance.Instance
+	]
+}

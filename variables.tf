@@ -19,10 +19,10 @@ variable "MachineType" {
 	description = "Designation for set of resources available to VM"
 	type = string
 	validation {
-		condition = contains([ "n1-standard-8", "n1-standard-4" ], var.MachineType)
+		condition = contains([ "n1-standard-4", "n1-standard-8" ], var.MachineType)
 		error_message = <<EOF
 MachineType must be one of the following types:
-	n1-standard-8, n1-standard-4
+	n1-standard-4, n1-standard-8
 		EOF
 	}
 }
@@ -50,6 +50,12 @@ variable "NetworkTargetTags" {
 variable "RegionName" {
 	default = "us-central1"
 	description = "Geographical location where resources can be hosted" 
+	type = string
+}
+
+variable "SleepDelay" {
+	default = "1m"
+	description = "Time duration to delay to allow application to perform internal initialization required before use"
 	type = string
 }
 
